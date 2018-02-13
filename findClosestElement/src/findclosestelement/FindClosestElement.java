@@ -13,6 +13,7 @@ import java.util.Scanner;
  */
 public class FindClosestElement 
 {
+    //Constant array
     static final int[] array = {-14,-9,-4,1, 6, 11,16};
 
     /**
@@ -31,7 +32,8 @@ public class FindClosestElement
 
                 System.out.println("This program has created an array of sorted integers:"
                         +Arrays.toString(array)+"\n Type in a value between -14 and 16 "
-                        + "and the program will guess the closest number in the to your number: ");
+                        + "and the program will guess the closest number in the "
+                        + "sorted array to your number: ");
                 userNum = scan.nextInt();
                 
                 while(userNum<-14 || userNum>16)
@@ -60,26 +62,31 @@ public class FindClosestElement
         }       
     }
     
+    /**
+     * 
+     * @param userNum
+     * @return closestElement
+     */
     public static int findClosestNum(int userNum)
     {
-        int closestNum = 0;
+        int closestElem = 0;
         
         if((userNum >=-16) && (userNum<=-12))
-            closestNum = -14;
+            closestElem = -14;
         if((userNum >=-11) && (userNum<=-7))
-            closestNum = -9;
+            closestElem = -9;
         if((userNum >=-6) && (userNum<=-2))
-            closestNum = -4;
+            closestElem = -4;
         if((userNum >=-1) && (userNum<=3))
-            closestNum = 1;
+            closestElem = 1;
         if((userNum >=4) && (userNum<=8))
-            closestNum = 6;
+            closestElem = 6;
         if((userNum >=9) && (userNum<=13))
-            closestNum = 11;
+            closestElem = 11;
         if((userNum >=14) && (userNum<=18))
-            closestNum = 16;
+            closestElem = 16;
         
-        return closestNum;       
+        return closestElem;       
     }
     
 }
