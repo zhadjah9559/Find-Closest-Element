@@ -1,4 +1,11 @@
 /*=============================================================================
+Zachary Hadjah                    February 12th 2018
+ Junior Year                       Side project
+  
+
+With an array of integers, already declared by the program (within a range of 
+-14 - 16), this program finds the closest value to the users input using the 
+findCLosestNum() function. 
 
 ==============================================================================*/
 package findclosestelement;
@@ -21,12 +28,12 @@ public class FindClosestElement
      */
     public static void main(String[] args) 
     {
-        char restart = 'Y';
+        String restart = "Y";
         Scanner scan = new Scanner(System.in);
 
         try 
         {
-           while(restart == 'Y' || restart == 'y')
+           while(restart.equals("y") || restart.equals("Y"))
             {
                 int userNum = 0;
 
@@ -45,11 +52,13 @@ public class FindClosestElement
 
                 System.out.println("The closest number to your nubmer in the array is: "
                                    +findClosestNum(userNum)+ "\n Try again? (Y/N)");
-                restart = scan.next().charAt(0);
-                while((restart != 'y') || (restart != 'Y') || (restart != 'n') || (restart != 'N'))
+                restart = scan.next();
+                
+                
+                while((!restart.equals("y")) && (!restart.equals("n")) && (!restart.equals("Y")) && (!restart.equals("N")))
                 {
                     System.out.println("Please enter valid input (Y/N)");
-                    restart = scan.next().charAt(0);
+                    restart = scan.next();
                 }
 
             } 
